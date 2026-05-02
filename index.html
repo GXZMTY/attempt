@@ -1,0 +1,272 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNIDAYS :) </title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <section class="view is-active home-view" data-view="home">
+      <h1>WHAT ARE U DOING HERE? :)</h1>
+      <div class="role-grid">
+        <a class="role-option" href="#student" data-go="student">I AM STUDENT</a>
+        <a class="role-option" href="#deny" data-go="deny">I AM STAFF</a>
+        <a class="role-option" href="#deny" data-go="deny">I AM TEACHER</a>
+        <a class="role-option" href="#deny" data-go="deny">I AM NOTHING</a>
+      </div>
+    </section>
+
+    <section class="view" data-view="student">
+      <h1>WELCOME, STUDENT :)</h1>
+      <p>ENTER YOUR STUDENT ID, NO PASSWORD NEEDED :)</p>
+      <p class="student-id-label">enter your student id:</p>
+      <input class="student-id-input" type="text" placeholder="e.g. :) I AM HAPPY" />
+      <button class="continue-btn" id="to-success" type="button">Continue</button>
+      <br />
+      <a class="action-link" id="back-home" href="#home">Back to homepage</a>
+    </section>
+
+    <section class="view" data-view="success">
+      <h1>HELLO<span id="hello-student-id"></span> :)</h1>
+      <p>we are happy to <span class="word-get">GET</span> you!</p>
+      <button class="continue-btn" id="start-your" type="button">START YOUR&mdash;&mdash;</button>
+      <br />
+      <a class="action-link" id="success-to-home" href="#home">Back to homepage</a>
+    </section>
+
+    <section class="view campus-view" data-view="campus">
+      <svg class="campus-art" viewBox="0 0 960 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="School illustration">
+        <rect width="960" height="540" fill="#ffffff"/>
+        <ellipse cx="480" cy="420" rx="310" ry="95" fill="none" stroke="#111111" stroke-width="4"/>
+        <path d="M300 340 L660 340 L650 390 L310 390 Z" fill="none" stroke="#111111" stroke-width="4"/>
+        <rect x="350" y="240" width="260" height="80" fill="none" stroke="#111111" stroke-width="4"/>
+        <polygon points="320,240 610,240 480,150" fill="none" stroke="#111111" stroke-width="4"/>
+        <circle cx="485" cy="270" r="22" fill="none" stroke="#111111" stroke-width="4"/>
+        <line x1="485" y1="270" x2="485" y2="255" stroke="#111111" stroke-width="4"/>
+        <line x1="485" y1="270" x2="500" y2="270" stroke="#111111" stroke-width="4"/>
+        <rect x="470" y="332" width="90" height="58" fill="none" stroke="#111111" stroke-width="4"/>
+        <rect x="395" y="315" width="170" height="18" fill="none" stroke="#111111" stroke-width="4"/>
+        <line x1="610" y1="340" x2="610" y2="200" stroke="#111111" stroke-width="4"/>
+        <path d="M610 200 C630 210, 645 210, 665 208 L665 248 C645 250, 630 248, 610 238 Z" fill="none" stroke="#111111" stroke-width="4"/>
+        <ellipse cx="240" cy="280" rx="35" ry="75" fill="none" stroke="#111111" stroke-width="4"/>
+        <ellipse cx="720" cy="280" rx="35" ry="75" fill="none" stroke="#111111" stroke-width="4"/>
+        <line x1="240" y1="330" x2="240" y2="240" stroke="#111111" stroke-width="4"/>
+        <line x1="720" y1="330" x2="720" y2="230" stroke="#111111" stroke-width="4"/>
+        <rect x="320" y="275" width="24" height="18" fill="none" stroke="#111111" stroke-width="4"/>
+        <rect x="365" y="275" width="24" height="18" fill="none" stroke="#111111" stroke-width="4"/>
+        <rect x="420" y="275" width="24" height="18" fill="none" stroke="#111111" stroke-width="4"/>
+        <rect x="490" y="275" width="24" height="18" fill="none" stroke="#111111" stroke-width="4"/>
+        <rect x="555" y="275" width="24" height="18" fill="none" stroke="#111111" stroke-width="4"/>
+        <rect x="600" y="275" width="24" height="18" fill="none" stroke="#111111" stroke-width="4"/>
+        <path d="M470 390 C455 410, 445 420, 455 432 C468 445, 500 465, 470 486" fill="none" stroke="#111111" stroke-width="4"/>
+        <path d="M520 390 C500 415, 500 428, 515 438 C535 452, 550 470, 530 486" fill="none" stroke="#111111" stroke-width="4"/>
+      </svg>
+      <h2 class="campus-title">UNI DAYS</h2>
+      <div class="campus-actions">
+        <button class="play-btn" id="campus-play" data-play-trigger="true" type="button">PLAY</button>
+        <button class="exit-btn" id="campus-exit" type="button">EXIT</button>
+      </div>
+      <div class="exit-flash" aria-hidden="true">
+        <div class="flash-scene">
+          <p class="flash-text flash-are">ARE</p>
+          <p class="flash-text flash-you">YOU</p>
+          <p class="flash-text flash-leaving">LEAVING?</p>
+          <svg class="flash-face" viewBox="0 0 360 250" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <line x1="25" y1="85" x2="335" y2="85" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+            <path d="M66 84 C50 35, 74 10, 104 18 C132 26, 150 72, 142 104" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+            <path d="M224 84 C210 44, 226 14, 256 12 C286 14, 294 56, 286 104" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+            <line x1="122" y1="86" x2="122" y2="86" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+            <line x1="252" y1="72" x2="252" y2="72" stroke="#ffffff" stroke-width="7" stroke-linecap="round"/>
+            <line x1="120" y1="145" x2="300" y2="145" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+            <path d="M122 165 C138 196, 142 205, 176 202 C208 198, 235 190, 272 164" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+            <line x1="170" y1="166" x2="170" y2="193" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+            <line x1="208" y1="163" x2="208" y2="192" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+            <line x1="245" y1="157" x2="245" y2="184" stroke="#ffffff" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="view" data-view="deny">
+      <h1>NO, U MUST BE A STUDENT :)</h1>
+      <button class="continue-btn" id="deny-back" type="button">Back</button>
+    </section>
+
+    <section class="view play-view" data-view="play">
+      <h1 class="play-title">Let me show u our beautiful campus:</h1>
+      <img class="play-map" src="play-map.png" alt="Campus map" />
+      <button class="continue-btn" id="play-next" type="button">Next</button>
+    </section>
+
+    <section class="view gallery-view" data-view="gallery">
+      <h1 class="gallery-title">WHat A grEat environment! :)</h1>
+      <div class="gallery-grid">
+        <img class="gallery-image" src="12.png" alt="12" />
+        <div class="gallery-empty" aria-hidden="true"></div>
+        <img class="gallery-image" src="34.png" alt="34" />
+        <img class="gallery-image" src="45.png" alt="45" />
+        <img class="gallery-image" src="56.png" alt="56" />
+      </div>
+      <button class="continue-btn" id="gallery-next" type="button">Next</button>
+    </section>
+
+    <section class="view a-view" data-view="a-page">
+      <h1 class="a-title">Our strong teaching team!!!:</h1>
+      <div class="a-grid">
+        <img class="a-image" src="a (1).png" alt="a1" />
+        <img class="a-image" src="a (2).png" alt="a2" />
+        <img class="a-image" src="a (3).png" alt="a3" />
+        <img class="a-image" src="a (4).png" alt="a4" />
+      </div>
+      <button class="continue-btn" id="a-next" type="button">Next</button>
+    </section>
+
+    <section class="view combo-view" data-view="combo">
+      <h1 class="combo-title">WAiiiiiit, WHat are these????</h1>
+      <div class="combo-grid">
+        <div class="combo-merged" aria-label="图片12和图片13组合">
+          <img class="combo-sub-image" src="图片13.png" alt="图片13" />
+          <img class="combo-sub-image" src="图片12.png" alt="图片12" />
+        </div>
+        <img class="combo-image" src="图片11.png" alt="图片11" />
+        <h1 class="combo-title">IT shoulD never be told....      :(</h1>
+      </div>
+      <button class="continue-btn" id="combo-final" type="button">FINAL</button>
+    </section>
+
+    <section class="view final-view" data-view="final-page">
+      <h1 class="final-message">Now, wake up :<span id="final-student-id"></span></h1>
+      <h1 class="final-title">SEE YOU SOON :)</h1>
+      <h1 class="final-title">SEE YOU SOON :)</h1>
+      <h1 class="final-title">SEE YOU SOON :)</h1>
+      <img class="final-image" src="图片14.png" alt="图片14" />
+      
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      const app = document.getElementById("app");
+      const views = Array.from(app.querySelectorAll(".view"));
+      const campusView = app.querySelector('[data-view="campus"]');
+      const studentIdInput = document.querySelector(".student-id-input");
+      const helloStudentId = document.getElementById("hello-student-id");
+      const finalStudentId = document.getElementById("final-student-id");
+      const DURATION = 360;
+
+      function getView(name) {
+        return app.querySelector('[data-view="' + name + '"]');
+      }
+
+      function showView(name, pushState) {
+        const current = app.querySelector(".view.is-active");
+        const next = getView(name);
+        if (!next || current === next) return;
+        if (name !== "campus") {
+          campusView.classList.remove("is-exit-flash");
+        }
+
+        next.hidden = false;
+        current.classList.add("is-leaving");
+        next.classList.add("is-entering");
+
+        requestAnimationFrame(function () {
+          next.classList.add("is-active");
+          current.classList.remove("is-active");
+        });
+
+        window.setTimeout(function () {
+          current.hidden = true;
+          current.classList.remove("is-leaving");
+          next.classList.remove("is-entering");
+        }, DURATION);
+
+        if (pushState) {
+          history.pushState({ view: name }, "", "#" + name);
+        }
+      }
+
+      function applyCurrentRoute(pushState) {
+        const hash = window.location.hash.replace("#", "");
+        const target = hash === "student" || hash === "success" || hash === "campus" || hash === "deny" || hash === "play" || hash === "gallery" || hash === "a-page" || hash === "combo" || hash === "final-page" ? hash : "home";
+        showView(target, pushState);
+      }
+
+      views.forEach(function (view) {
+        if (!view.classList.contains("is-active")) {
+          view.hidden = true;
+        }
+      });
+
+      document.querySelectorAll("[data-go]").forEach(function (item) {
+        item.addEventListener("click", function (event) {
+          event.preventDefault();
+          showView(item.dataset.go, true);
+        });
+      });
+
+      document.getElementById("back-home").addEventListener("click", function (event) {
+        event.preventDefault();
+        showView("home", true);
+      });
+
+      document.getElementById("to-success").addEventListener("click", function () {
+        const typedId = studentIdInput.value.trim();
+        const idText = typedId ? " " + typedId : "";
+        helloStudentId.textContent = idText;
+        finalStudentId.textContent = idText;
+        showView("success", true);
+      });
+
+      document.getElementById("success-to-home").addEventListener("click", function (event) {
+        event.preventDefault();
+        showView("home", true);
+      });
+
+      document.getElementById("start-your").addEventListener("click", function () {
+        campusView.classList.remove("is-exit-flash");
+        showView("campus", true);
+      });
+
+      document.getElementById("campus-exit").addEventListener("click", function () {
+        campusView.classList.add("is-exit-flash");
+      });
+
+      document.querySelectorAll("[data-play-trigger='true']").forEach(function (button) {
+        button.addEventListener("click", function () {
+          campusView.classList.remove("is-exit-flash");
+          showView("play", true);
+        });
+      });
+
+      document.getElementById("play-next").addEventListener("click", function () {
+        showView("gallery", true);
+      });
+
+      document.getElementById("gallery-next").addEventListener("click", function () {
+        showView("a-page", true);
+      });
+
+      document.getElementById("a-next").addEventListener("click", function () {
+        showView("combo", true);
+      });
+
+      document.getElementById("combo-final").addEventListener("click", function () {
+        showView("final-page", true);
+      });
+
+      document.getElementById("deny-back").addEventListener("click", function () {
+        showView("home", true);
+      });
+
+      window.addEventListener("popstate", function () {
+        applyCurrentRoute(false);
+      });
+
+      applyCurrentRoute(false);
+    })();
+  </script>
+</body>
+</html>
